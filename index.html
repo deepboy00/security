@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEGURITEK 24/7 - Seguridad, Limpieza y Cámaras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container max-width-container">
+            <div class="logo">
+                <img src="logo.png" alt="SEGURITEK 24/7">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios"></a></li>
+                    <li><a href="https://wa.me/51915254240" target="_blank">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <section id="hero">
+            <div class="hero-content ">
+                <h1>SEGURIDAD Y CALIDAD 24/7</h1>
+                <p>Vigilancia, limpieza e instalación de cámaras para tu tranquilidad.</p>
+                <a href="https://wa.me/51915254240" target="_blank" class="cta-button">Contáctanos</a>
+            </div>
+    </section>
+
+    <section id="servicios" class="max-width-container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        
+        <!-- Vigilancia Section -->
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Vigilancia</h3>
+                <p>Brindamos seguridad 24/7 para tus propiedades, empresas y más. Nuestro servicio incluye vigilancia en tiempo real, monitoreo constante, y respuesta rápida ante cualquier situación sospechosa. Con sistemas de alarmas y patrullaje, aseguramos tu tranquilidad en todo momento. Nuestro equipo de profesionales altamente capacitados está siempre disponible para mantener un entorno seguro.</p>
+            </div>
+            <div class="service-image">
+                <img src="vigilancia-image.png" alt="Vigilancia">
+            </div>
+        </div>
+
+        <!-- Instalación de Cámaras Section -->
+        <div class="service-item reverse">
+            <div class="service-text">
+                <h3>Instalación de Cámaras</h3>
+                <p>Instalamos cámaras de seguridad para tu máxima protección. Ofrecemos una amplia gama de cámaras de alta definición, cámaras con visión nocturna, y sistemas de monitoreo que te permitirán tener control total de tus espacios. Desde cámaras fijas hasta cámaras PTZ (Pan, Tilt, Zoom), todas pueden ser monitoreadas remotamente desde tu teléfono, asegurando que siempre estés al tanto de lo que ocurre.</p>
+            </div>
+            <div class="service-image">
+                <img src="camaras-image.png" alt="Instalación de Cámaras">
+            </div>
+        </div>
+
+        <!-- Limpieza Section -->
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Limpieza</h3>
+                <p>Ofrecemos limpieza profesional para oficinas, hogares y espacios comerciales. Nuestro equipo utiliza productos ecológicos que no solo aseguran una limpieza profunda, sino también la salud de tus espacios. Nos encargamos de todo, desde la limpieza de áreas comunes hasta la desinfección de oficinas y hogares, garantizando ambientes saludables y agradables tanto para ti como para tus empleados o familia.</p>
+            </div>
+            <div class="service-image">
+                <img src="limpieza-image.png" alt="Limpieza">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo -->
+    <section id="mapa" class="max-width-container">
+        <h2 class="section-title">Nuestra Cobertura</h2>
+        <p>Explora las áreas que cubrimos con nuestro servicio de seguridad, limpieza e instalación de cámaras.</p>
+        <div id="map"></div> <!-- El mapa se cargará aquí -->
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SEGURITEK 24/7 | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- WhatsApp Button Floating -->
+    <a href="https://wa.me/51915254240" target="_blank" class="whatsapp-btn">
+        <img src="whatsapp-logo.png" alt="WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
