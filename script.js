@@ -56,3 +56,42 @@ function initMap() {
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const carousel = document.querySelector('.client-carousel');
+    const items = document.querySelectorAll('.client-logo');
+    const totalItems = items.length;
+    let currentIndex = 0; // Índice inicial
+
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+        const itemWidth = items[0].offsetWidth + 20; // Ancho de la imagen + el espacio entre ellas
+        const offset = -currentIndex * itemWidth; // Calcula el desplazamiento
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Función para mover al siguiente elemento
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Volver al primer elemento
+        }
+        updateCarousel();
+    });
+
+    // Función para mover al elemento anterior
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1; // Volver al último elemento
+        }
+        updateCarousel();
+    });
+
+    // Inicializa el carrusel
+    updateCarousel();
+});

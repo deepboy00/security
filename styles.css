@@ -102,7 +102,7 @@ nav ul li a:hover::after {
     background: linear-gradient(
             rgba(0, 0, 0, 0.5), 
             rgba(0, 0, 0, 0.5) 
-        ), url('camaras.png');
+        ), url('fondo.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -188,7 +188,7 @@ nav ul li a:hover::after {
 
 .service-image img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -377,3 +377,92 @@ footer {
         opacity: 0.2;
     }
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Contenedor del carrusel */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Asegura que las imágenes fuera de vista no se muestren */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Estilo para el carrusel de clientes */
+.client-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    justify-content: flex-start; /* Asegura que las imágenes se alineen correctamente */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+/* Estilo para las imágenes de los clientes */
+.client-logo {
+    flex: 0 0 auto;
+    max-width: 120px; /* Limita el tamaño máximo de las imágenes */
+    height: auto;
+    overflow: hidden;
+}
+
+.client-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ajusta las imágenes sin deformarlas */
+}
+
+/* Botones de navegación */
+.prev-btn, .next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Efecto hover en los botones */
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Efectos de animación en el carrusel */
+.client-carousel .client-logo {
+    transition: transform 0.3s ease;
+}
+
+.client-carousel .client-logo:hover {
+    transform: scale(1.05); /* Agrega un efecto de zoom al pasar el ratón */
+}
+
+
