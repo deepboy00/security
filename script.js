@@ -5,7 +5,7 @@ function checkVisibility() {
     serviceItems.forEach(item => {
         const rect = item.getBoundingClientRect();
         // Modifica la condición para activarlo antes de que esté centrado
-        if (rect.top < window.innerHeight * 0.75) { // Cambié el valor de "0" a "0.75"
+        if (rect.top < window.innerHeight * 0.80) { // Cambié el valor de "0" a "0.75"
             item.classList.add('visible'); // Aplica la animación
         }
     });
@@ -57,6 +57,7 @@ function initMap() {
     });
 }
 
+/*
 document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -95,3 +96,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializa el carrusel
     updateCarousel();
 });
+*/
