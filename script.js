@@ -57,6 +57,24 @@ function initMap() {
     });
 }
 
+// JavaScript para agregar un desplazamiento suave personalizado
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1); // Obtener el ID de destino
+        const targetElement = document.getElementById(targetId);
+
+        // Desplazamiento suave
+        window.scrollTo({
+            top: targetElement.offsetTop - 100, // Ajuste el valor 100 según sea necesario
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
 /*
 document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.querySelector('.prev-btn');
