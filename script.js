@@ -17,8 +17,6 @@ window.addEventListener('scroll', checkVisibility);
 // Llama la función al cargar la página por si los elementos ya están visibles
 checkVisibility();
 
-
-
 function initMap() {
     var mapOptions = {
         center: { lat: -12.04323080249785, lng: -75.19155604728536 }, // Coordenadas del centro del mapa
