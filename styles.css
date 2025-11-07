@@ -336,6 +336,7 @@ footer {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
 }
 /* Estilo para el enlace "click aquí" */
 #mapa a {
