@@ -337,3 +337,42 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+/* Estilo para el enlace "click aquí" */
+#mapa a {
+    color: gold;
+    text-decoration: none; /* Quitar el subrayado */
+    font-weight: bold; /* Hacer el texto negrita */
+    position: relative; /* Necesario para el efecto de sombra */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y movimiento */
+}
+
+/* Estilo para el enlace al pasar el ratón (hover) */
+#mapa a:hover {
+    color: #ffcc00; /* Cambiar el color al pasar el ratón */
+    transform: scale(1.1); /* Aumentar el tamaño ligeramente para el efecto de "resplandor" */
+}
+
+/* Añadir un resplandor debajo del enlace */
+#mapa a:hover::after {
+    content: ''; /* Necesario para crear un pseudo-elemento */
+    position: absolute;
+    bottom: -3px; /* Ajuste para que la sombra aparezca debajo */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffcc00; /* Resplandor amarillo */
+    animation: glow 1.5s infinite ease-in-out; /* Animación para el resplandor */
+}
+
+/* Animación del resplandor */
+@keyframes glow {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}

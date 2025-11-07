@@ -18,21 +18,30 @@ window.addEventListener('scroll', checkVisibility);
 checkVisibility();
 
 
-// Función que inicializa el mapa
+
 function initMap() {
     var mapOptions = {
-        center: { lat: -12.04318, lng: -77.02824 }, // Coordenadas del centro del mapa (ajústalas a tu zona)
-        zoom: 12, // Nivel de zoom
-        mapTypeId: 'roadmap' // Tipo de mapa (puedes usar 'satellite', 'hybrid', etc.)
+        center: { lat: -12.04323080249785, lng: -75.19155604728536 }, // Coordenadas del centro del mapa
+        zoom: 15, // Nivel de zoom
+        mapTypeId: 'roadmap', // Tipo de mapa (puedes usar 'satellite', 'hybrid', etc.)
+        disableDefaultUI: true, // Desactiva los controles predeterminados
+        gestureHandling: 'none', // Deshabilita la manipulación del mapa
+        scrollwheel: false, // Desactiva el zoom con la rueda del ratón
+        draggable: false, // Desactiva el arrastre del mapa
     };
     
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    // Marcadores para indicar tus ubicaciones (si tienes varias)
+    // Marcadores para indicar tus ubicaciones
     var locations = [
-        { lat: -12.04318, lng: -77.02824, title: 'Sucursal Lima' },
-        { lat: -13.53257, lng: -71.96871, title: 'Sucursal Cusco' },
-        { lat: -9.19159, lng: -75.2105, title: 'Sucursal Tarapoto' },
+        { 
+            lat: -12.04323080249785, 
+            lng: -75.19155604728536, 
+            title: 'Sucursal Huancayo Upla',
+            googleMapsUrl: 'https://www.google.com/maps?q=-12.043164917381516,-75.19201873883885'
+        },
+        //{ lat: -13.53257, lng: -71.96871, title: 'Sucursal Cusco' },
+        //{ lat: -9.19159, lng: -75.2105, title: 'Sucursal Tarapoto' },
     ];
 
     // Agregar los marcadores al mapa
@@ -41,6 +50,11 @@ function initMap() {
             position: { lat: location.lat, lng: location.lng },
             map: map,
             title: location.title
+        });
+
+        // Agregar el evento de clic en cada marcador
+        google.maps.event.addListener(marker, 'click', function() {
+            window.open(location.googleMapsUrl, '_blank'); // Abre Google Maps en una nueva pestaña
         });
     });
 }
