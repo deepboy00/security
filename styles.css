@@ -35,7 +35,8 @@ body {
 header {
     background-color: #111;
     color: gold;
-    padding: 10px 30px;
+    /* Reducido el padding horizontal para el header fijo */
+    padding: 10px 20px; 
     position: fixed;
     width: 100%;
     top: 0;
@@ -45,7 +46,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto; /* Centrado */
+    margin: 0 auto;
 }
 
 header .logo img {
@@ -68,15 +69,15 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    position: relative; /* Necesario para posicionar el pseudo-elemento de hover */
-    padding: 5px 0; /* Añadimos un pequeño padding para el efecto */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
 /* Hover effect for menu items */
 nav ul li a:hover {
-    color: #ffcc00; /* Cambia el color del texto al pasar el mouse */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Añade sombra al texto */
+    color: #ffcc00;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Add a bottom line effect for hover */
@@ -87,34 +88,36 @@ nav ul li a::after {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #ffcc00; /* Color de la línea debajo del texto */
-    transform: scaleX(0); /* Inicialmente la línea está invisible */
+    background-color: #ffcc00;
+    transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease-out; /* Animación para la línea */
+    transition: transform 0.3s ease-out;
 }
 
 /* Show the bottom line when hovering over the link */
 nav ul li a:hover::after {
-    transform: scaleX(1); /* Muestra la línea debajo del texto cuando se hace hover */
+    transform: scaleX(1);
     transform-origin: bottom left;
 }
 
 /* Hero Section with background image */
 #hero {
     position: relative;
+    margin-top: 100px; /* Ajusta este valor si la imagen sigue cortándose */
+    height: calc(100vh - 100px); /* Asegúrate de que ocupe todo el alto de la pantalla */
     background: linear-gradient(
-            rgba(0, 0, 0, 0.5), 
-            rgba(0, 0, 0, 0.5) 
-        ), url('fondo.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5) 
+            ), url('fondo.png');
+    background-size: cover; /* Asegura que la imagen ocupe todo el espacio */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: scroll; /* Cambia fixed por scroll para evitar el corte en algunos dispositivos */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    padding: 0 20px; 
 }
 
 .hero-content h1 {
@@ -297,6 +300,7 @@ footer {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     z-index: 100;
     transition: transform 0.3s, box-shadow 0.3s;
+    animation: bounce 1s infinite; /* Aplica la animación de rebote */
 }
 
 .whatsapp-btn:hover {
@@ -307,6 +311,24 @@ footer {
 .whatsapp-btn img {
     width: 35px;
     height: 30px;
+}
+/* Animación de rebote para el botón de WhatsApp */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Empieza en su posición original */
+    }
+    25% {
+        transform: translateY(-10px); /* Sube un poco */
+    }
+    50% {
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+    75% {
+        transform: translateY(-10px); /* Sube otra vez */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
 }
 
 /* Animación para los servicios */
@@ -486,4 +508,171 @@ footer {
     transform: scale(1.05); /* Agrega un efecto de zoom al pasar el ratón */
 }
 
+/* --- Media Queries (Hacer el diseño Responsive) --- */
+
+/* 1. Para Pantallas Medianas (Tabletas, hasta 1024px) */
+@media (max-width: 1024px) {
+    /* Header/Navegación */
+    .header-container {
+        padding: 0 10px;
+    }
+    nav ul {
+        gap: 10px; /* Reducir el espacio entre elementos de la navegación */
+    }
+    nav ul li a {
+        font-size: 14px; /* Reducir un poco el tamaño de la fuente del menú */
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    /* Títulos de Sección */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .section-title::after {
+        width: 300px; /* Reducir el ancho de la línea del título */
+    }
+
+    /* Servicios */
+    .service-item {
+        flex-direction: column; /* Apilar en columna */
+        text-align: center;
+    }
+
+    .service-item.reverse {
+        flex-direction: column; /* Apilar en columna incluso si estaba invertido */
+    }
+
+    .service-text,
+    .service-image {
+        width: 100%; /* Ocupar todo el ancho */
+        padding: 0 10px;
+    }
+
+    .service-image img {
+        height: 300px; /* Reducir un poco la altura de las imágenes de servicio */
+        margin-top: 20px;
+    }
+    
+    .service-text h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Mapa */
+    #map {
+        height: 400px; /* Ajustar la altura del mapa */
+        margin: 10px 0;
+    }
+    
+    /* Clientes (Asegurar que el carrusel sea visible) */
+    .client-carousel {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .client-logo {
+        max-width: 100px; /* Ajustar el tamaño de los logos */
+        margin: 10px;
+    }
+}
+
+/* 2. Para Pantallas Pequeñas (Móviles, hasta 768px) */
+@media (max-width: 768px) {
+    /* Header/Navegación */
+    header {
+        height: 250px; /* Altura flexible */
+        padding: 15px 0 10px 0; /* Ajuste el padding para más espacio vertical */
+        position: absolute;
+    }
+    .header-container {
+        flex-direction: column; /* Apilar logo y menú */
+        text-align: center;
+          
+    }
+    header .logo {
+        margin-top: 25px; /* Más espacio debajo del logo */
+    }
+    nav ul {
+        flex-direction: column; /* Los enlaces de navegación en una columna */
+        align-items: center;
+        gap: 8px; /* Separación entre los enlaces */
+        width: 100%;
+        padding-top: 5px; 
+    }
+    nav ul li {
+        margin: 0;
+    }
+    
+    /* Hero Section */
+     #hero {
+        margin-top: 250px; /* Elimina el margen superior */
+        height: 70vh; /* Ocupa toda la altura de la pantalla */
+        background-size: cover; /* Asegura que la imagen ocupe toda la pantalla */
+        background-position: center center; /* Centra la imagen */
+        padding-top: 0; /* Ajusta el padding si es necesario */
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Títulos de Sección */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    .section-title::after {
+        width: 80%; /* Hacer la línea más responsiva */
+        max-width: 250px;
+    }
+
+    /* Servicios */
+    #servicios {
+        gap: 30px;
+    }
+    .service-image img {
+        height: 250px; /* Más reducción en la altura de las imágenes */
+    }
+    .service-text h3 {
+        font-size: 1.5rem;
+    }
+    .service-text p {
+        font-size: 0.95rem;
+    }
+
+    /* Clientes */
+    .client-carousel {
+        padding: 10px 0;
+    }
+    .client-logo {
+        max-width: 80px; /* Reducción adicional en el tamaño de los logos */
+        margin: 5px;
+    }
+    
+    /* WhatsApp Flotante */
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-btn img {
+        width: 30px;
+        height: 25px;
+    }
+    .contact-link {
+        display: none; /* Oculta el enlace de contacto en pantallas pequeñas */
+    }
+}
 
