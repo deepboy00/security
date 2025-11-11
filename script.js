@@ -19,7 +19,7 @@ checkVisibility();
 
 function initMap() {
     var mapOptions = {
-        center: { lat: -12.04323080249785, lng: -75.19155604728536 }, // Coordenadas del centro del mapa
+        center: { lat: -12.1147103, lng: -75.1875637 }, // Coordenadas del centro del mapa
         zoom: 15, // Nivel de zoom
         mapTypeId: 'roadmap', // Tipo de mapa (puedes usar 'satellite', 'hybrid', etc.)
         disableDefaultUI: true, // Desactiva los controles predeterminados
@@ -33,10 +33,10 @@ function initMap() {
     // Marcadores para indicar tus ubicaciones
     var locations = [
         { 
-            lat: -12.04323080249785, 
-            lng: -75.19155604728536, 
+            lat: -12.1147103, 
+            lng: -75.1875637,
             title: 'Sucursal Huancayo Upla',
-            googleMapsUrl: 'https://www.google.com/maps?q=-12.043164917381516,-75.19201873883885'
+            googleMapsUrl: 'https://www.google.com/maps?q=-12.1147103,-75.1875637'
         },
         //{ lat: -13.53257, lng: -71.96871, title: 'Sucursal Cusco' },
         //{ lat: -9.19159, lng: -75.2105, title: 'Sucursal Tarapoto' },
